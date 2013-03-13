@@ -22,7 +22,7 @@
     (mongo/set-connection! @conn))
 
   ; Run the server
-  (let [port (Integer/parseInteger (get (System/getenv) "PORT" "8080"))]
+  (let [port (Integer. (get (System/getenv) "PORT" "8080"))]
     (run-server
       (async-handler (cmpj-handler/site #'routes/main-routes))
       {:port port})))
