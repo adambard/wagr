@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Welcome to Middleman</title>
+    
+    <link href="css/all.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="js/all.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="index">
+    <div class="container">
+        <header class="sixteen columns">
+            <h1>Wagr</h1>
+            <h2>Settle your childish bets like adults</h2>
+        </header>
+        <div class="howitworks">
+            <ol>
+                <li class="four columns">1. Place your bet.</li>
+                <li class="four columns">2. Share it around.</li>
+                <li class="eight columns">3. Get notified when it's time to settle up.</li>
+            </ol>
+        </div>
+        <div class='bet-form'>
+  <form id='bet-form'>
+    <div class='eight columns'>
+      <label>I,</label>
+      <input id='better' name='better' type='text'>
+      <label>bet you,</label>
+      <input id='bettee' name='bettee' type='text'>
+      <label>that...</label>
+      <textarea id='bet' name='bet'></textarea>
+      <label>The loser must...</label>
+      <textarea id='wager' name='wager'></textarea>
+    </div>
+    <div class='eight columns'>
+      <label>Date of resolution</label>
+      <input id='date' name='date' type='text'>
+      <label>My Email address</label>
+      <input id='email1' name='email1' type='text'>
+      <label>Your Email address</label>
+      <input id='email2' name='email2' type='text'>
+      <button>The deal is struck</button>
+    </div>
+  </form>
+</div>
+<div class='sixteen columns'>
+  <h2>Latest Bets</h2>
+  <div class='latest-bets'>
+    <div class='latest-bet-item show-bet'>
+      <p>I, <span class="better">Some guy</span>,
+      bet you, <span class="bettee">Some other guy</span>,
+      that <span class="bet">The Yankees will win the Superbowl, overcoming the handicap of being a baseball team.
+      </p>
+      The loser must
+      <span class='wager'>eat a whole tub of sour cream.</span>
+    </div>
+  </div>
+</div>
+
+        <footer class="sixteen columns">
+        <p>A project by <a href="http://adambard.com/">Adam Bard</a></p>
+        </footer>
+    </div>
+  </body>
+</html>
