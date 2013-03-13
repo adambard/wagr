@@ -1,6 +1,7 @@
 (ns wagr.core
   (:require
     [wagr.views.common :as common-views]
+    [wagr.data.wagers :as wagers]
     [ring.util.response :as resp]
     ))
 
@@ -8,10 +9,12 @@
 
 ; GET /
 (defn index [& args]
-  (common-views/index-tpl (take 5 @bets)))
+  (common-views/index-tpl (wagers/top-wagers 5)))
 
 ; POST /
 (defn create-wager [bet]
-  (swap! bets conj bet)
-  (swap! bets (partial take 5))
+  (let [[wager err] (wagers/create-wager! bet)]
+    (when err
+      (println "ERROR: " err)))
+
   (resp/redirect "/"))
