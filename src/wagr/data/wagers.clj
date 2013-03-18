@@ -15,6 +15,7 @@
    [:created :int]
    [:email1 :str]
    [:email2 :str]
+   [:resolved :bool?]
    ])
 
 (models/model "wager-" :wagers wager-schema)
@@ -27,6 +28,8 @@
                   }
         ]
     (create-wager-! (merge data timedata))))
+
+(def update-wager! update-wager-!)
 
 (defn top-wagers [n]
   (mongo/fetch :wagers :sort {:_id -1} :limit n))

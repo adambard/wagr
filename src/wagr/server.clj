@@ -13,13 +13,16 @@
       (future
         (respond (handler request))))))
 
-(defn -main []
-  ; Connect to Mongo
+(defn connect-mongo []
   (let [uri (get (System/getenv) "MONGOHQ_URL" "mongodb://127.0.0.1:27017/wagr")]
     (println uri)
     (reset! conn (mongo/make-connection uri))
     (mongo/set-write-concern @conn :safe)
-    (mongo/set-connection! @conn))
+    (mongo/set-connection! @conn)))
+
+(defn -main []
+  ; Connect to Mongo
+  (connect-mongo)
 
   ; Run the server
   (let [port (Integer. (get (System/getenv) "PORT" "8080"))]
