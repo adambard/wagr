@@ -19,3 +19,10 @@
   [:.latest-bets] (enlive/content (map show-bet latest-bets))
   [:#bet-form] (enlive/set-attr :action "/" :method "post")
   [:#better] (enlive/set-attr :name "better"))
+
+(enlive/deftemplate show-tpl "templates/wager.html" ; EL
+  [wager] ; ARGS
+  [:span.better] (enlive/content (:better wager))
+  [:span.bettee] (enlive/content (:bettee wager))
+  [:span.bet] (enlive/content (:bet wager))
+  [:span.wager] (enlive/content (:wager wager)))

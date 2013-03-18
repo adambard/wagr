@@ -7,6 +7,9 @@
 (defroutes main-routes
   (GET "/" [] (wagr/index))
   (POST "/" [& params] (wagr/create-wager params))
-  (route/resources "/"))
+  (GET "/wager/show/:id/" [id] (wagr/show-wager id))
+  (route/resources "/")
+  (route/not-found "404 Not Found")
+  )
 
 

@@ -30,6 +30,7 @@
     (create-wager-! (merge data timedata))))
 
 (def update-wager! update-wager-!)
+(def fetch-wager fetch-wager-)
 
 (defn top-wagers [n]
   (mongo/fetch :wagers :sort {:_id -1} :limit n))

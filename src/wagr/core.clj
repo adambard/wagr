@@ -16,5 +16,9 @@
   (let [[wager err] (wagers/create-wager! bet)]
     (when err
       (println "ERROR: " err)))
-
   (resp/redirect "/"))
+
+; GET /wager/show/:id/
+(defn show-wager [id]
+  (let [wager (wagers/fetch-wager id)]
+    (common-views/show-tpl wager)))
