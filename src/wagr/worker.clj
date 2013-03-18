@@ -13,7 +13,7 @@
         subj "Time's up"
         to (map wager [:email1 :email2])
         ]
-    (map #(mail/send % subj msg) to)
+    (doall (map #(mail/send % subj msg) to))
     (wagers/update-wager! wager {:resolved true})))
 
 (defn resolve-wagers []

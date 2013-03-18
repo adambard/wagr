@@ -15,7 +15,6 @@
    })
 
 (defn- send_ [msg]
-  (println smtp-info)
   (postal/send-message
     #^{
       :host (getenv "SMTP_HOST")
@@ -33,4 +32,5 @@
     }))
 
 (defn send [to subject body]
+  (println "Sending to" to)
   (send_ {:to to :subject subject :body body}))
