@@ -15,8 +15,8 @@
 (defn create-wager [bet]
   (let [[wager err] (wagers/create-wager! bet)]
     (when err
-      (println "ERROR: " err)))
-  (resp/redirect "/"))
+      (println "ERROR: " err))
+    (resp/redirect (str "/wager/show/" (:_id wager) "/"))))
 
 ; GET /wager/show/:id/
 (defn show-wager [id]

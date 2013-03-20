@@ -26,3 +26,5 @@
   [:span.bettee] (enlive/content (:bettee wager))
   [:span.bet] (enlive/content (:bet wager))
   [:span.wager] (enlive/content (:wager wager)))
+
+ (enlive/deftemplate about-tpl "templates/about.html" [])
