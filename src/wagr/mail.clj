@@ -23,7 +23,7 @@
       :port (Integer. (getenv "SMTP_PORT"))
        }
     {
-     :from (getenv "MAIL_FROM" "wagr@adambard.com")
+     :from (getenv "MAIL_FROM")
      :to (:to msg)
      :subject (str "[WAGR] " (:subject msg))
      :body [{:type "text/html"

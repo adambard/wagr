@@ -5,7 +5,7 @@
 
 
 (enlive/defsnippet show-bet "templates/index.html" [:.latest-bet-item]
-  [{better :better bettee :bettee bet :bet wager :wager}] ; ARGS
+  [{:keys [better bettee bet wager]}] ; ARGS
   ; TRANSFORMATIONS
   [:.better] (enlive/content better)
   [:.bettee] (enlive/content bettee)
